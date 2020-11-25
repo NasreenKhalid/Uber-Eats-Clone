@@ -1,0 +1,189 @@
+:root{
+    --color-green:#06c167;
+    --color-grey:rgb(238, 238, 238);
+    --color-greyDark:rgb(84, 84, 84);
+}
+
+*{
+    box-sizing: border-box;
+
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.smalltext{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.container{
+    width:calc(100% -120px);
+    margin: auto;
+}
+
+
+
+header{
+    .logo{
+        h1{
+            font-weight: 300;
+            span{
+                color:var(--color-green);
+                font-weight: 600;
+            }
+        }
+    }
+    .container{
+        display: flex;
+        align-items: center;
+    }
+   .searchBar{
+     margin-left: auto;
+
+   }
+   .header-option{
+    padding-left: 3rem;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    svg {
+        margin-right: 1rem;
+        display: inline-flex;
+      }
+   }
+   .currentDetails, .searchBar{
+       display: flex;
+       
+   }
+}
+
+.options{
+    padding: 1rem 0;
+    .options-btn{
+background:var(--color-grey);
+padding: 0.6rem;
+border-radius: 30px;
+border: 0;
+font-size: 0.8rem;
+letter-spacing: 0.5px;
+svg {
+    max-width: 20px;
+    margin-right: 0.4rem;
+  }
+&.selected{
+    background: black;
+    color: white;
+}
+    }
+}
+
+.listings{
+    padding: 2rem 0;
+    .header{
+        display: flex;
+        align-items: center;
+        .header-title{
+            h2{
+                font-weight: 200;
+                font-size: 1.7rem;
+                margin-bottom: 0.5rem;
+                margin-top: 0;
+            }
+            span{
+            color: var(--color-greyDark);
+            }
+        }
+        .header-view-options{
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            margin: auto 0 auto auto;
+            .viewAll{
+                color: var(--color-green);
+                padding-right: 2rem;
+            }
+            .viewMore{
+                .arrow{
+                    width: 40px;
+                    height: 40px;
+                    background: var(--color-grey);
+                    display: inline-flex;
+                    align-content: center;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    opacity: 0.3;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+                    &.dark, &:hover{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+  .listings-grid{
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+      .listings-grid-element{
+        width: calc(1 / 3 * 100% - (1 - 1 / 3) * 25px);
+        margin-right: 14px;
+        margin-top: 2rem;
+    
+          .image{
+              height: 240px;
+              overflow: hidden;
+              img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+              }
+          }
+          .text-lower{
+              padding: 0.5rem 0;
+              
+          }
+          .text{
+              display: flex;
+             align-items: center;
+             justify-content: space-between;
+              border-bottom: 1px solid #ddd;
+             padding-bottom: 1rem;
+             margin-top: 14px;
+              h3{
+                  font-weight: 400;
+                  margin-bottom: 0.3rem;
+                margin-top: 0;
+              }
+              span{
+                  font-size: 0.8rem;
+                font-weight: 300;
+                color: var(--color-greyDark);
+                }
+                .rating{
+                    margin-left: auto 0 auto auto;
+                    height: 100%;
+                    span{
+                        height: 40px;
+                        width: 40px;
+                        background: var(--color-grey);
+                        display: inline-flex;
+                        align-content: center;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1rem;
+                        color: black;
+                        border-radius: 50%;
+                    }
+                }
+          }
+      }
+  }
+}
